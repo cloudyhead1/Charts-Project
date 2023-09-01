@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<div style='width: 400px'>
+  <canvas id='mychart'></canvas>
+</div>
+<script>
+  var ctx = document.getElementById( 'mychart')
+  var mychart = new Chart(ctx, {
+    type:'doughnut',
+    data: {
+      labels: ['Dogs', 'Cats', 'Birds', 'Fish', ],
+      datasets:[{
+        label:'Most preferred pet',
+        data:[67, 46, 14, 27],
+        backgroundColor:[
+          'rgb(255, 99, 150)',
+          'rgb(50, 150, 240)',
+          'rgb(255, 200, 80)',
+          'rgb(80, 190, 190)'
+        ],
+        hoverOffset: 1
+      }]
+    }
+  });
+</script>
+<canvas id='mychart2'></canvas>
+<script>
+  var ctx = document.getElementById('mychart2')
+  var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels:['Tue 22', 'Wed 23','Thu 24', 'Fri 25', 'Sat 26', 'Sun 27', 'Mon 28', 'Tue 29', 'Wed 30', 'Thu 31', 'Fri 1', 'Sat 2', 'Sun 3', 'Mon 4' ],
+      datasets: [{
+        data: [90, 96, 97, 95, 96, 96, 96, 96, 96, 97, 97, 96, 96, 95],
+        label: 'California',
+        borderColor: 'rgba(120, 120, 255, 1)'
+      }, {
+        data: [90, 96, 98, 95, 95, 96, 96, 95, 96, 97, 96, 95, 95, 94],
+        label: 'Alberta',
+        borderColor: 'rgba(255, 100, 255, 1)'
+      }, {
+        data: [99, 96, 97, 98, 99, 98, 99, 98, 95, 93, 94, 94, 93, 93],
+        label: 'South Australia',
+        borderColor: 'rgba(100, 200, 100, 1)'
+      }, {
+        data: [80, 79, 74, 80, 85, 79, 75, 74, 79, 73, 77, 79, 83, 84],
+        label: 'Staten Island',
+        borderColor: 'rgb(161,147,47)'
+      }]
+    },
+    options:{
+      plugins:{
+        title: {
+          display: true,
+          text: 'Temperature'
+        },
+        legend: {
+          position: 'left'
+        }
+      }
+    }
+  });
+</script>
+<div style='width: 300px'>
+    <canvas id="mychart3"></canvas>
+</div>
+<script>
+    var ctx = document.getElementById('mychart3');
+    var myChart = new Chart(ctx, {
+        type:'bar',
+        data: {
+            labels: ['Switch', 'Xbox', 'Playstation', 'PC'],
+            datasets: [{
+                label: '# of Votes',
+                data: [31, 36, 14, 86],
+                backgroundColor: [
+                    'rgba(86,26,189,0.43)',
+                    'rgba(236,171,79,0.78)',
+                    'rgba(40,229,172,0.78)',
+                    'rgba(70,173,31,0.89)',
+                    'rgba(211,26,26,0.79)'
+                ],
+                borderColor: [
+                    'rgba(50,36,122,0.68)',
+                    'rgba(168,105,22,0.84)',
+                    'rgba(65,129,120,0.68)',
+                    'rgba(60,141,46,0.53)',
+                    'rgba(183,27,27,0.58)'
+                ],
+                borderWidth: 5
+            }],
+            options:  {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                indexAxis: 'y'
+            }}
+
+    });
+</script>
+</body>
+</html>
