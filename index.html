@@ -9,25 +9,99 @@
 <div style='width: 400px'>
   <canvas id='mychart'></canvas>
 </div>
+<canvas id='chart2'></canvas>
 <script>
-  var ctx = document.getElementById( 'mychart')
-  var mychart = new Chart(ctx, {
-    type:'doughnut',
-    data: {
-      labels: ['Dogs', 'Cats', 'Birds', 'Fish', ],
-      datasets:[{
-        label:'Most preferred pet',
-        data:[67, 46, 14, 27],
-        backgroundColor:[
-          'rgb(255, 99, 150)',
-          'rgb(50, 150, 240)',
-          'rgb(255, 200, 80)',
-          'rgb(80, 190, 190)'
-        ],
-        hoverOffset: 1
-      }]
-    }
-  });
+    var cty = document.getElementById('chart2')
+    var nextChart = new Chart(cty, {
+        type: 'scatter',
+        data: {
+            datasets:[{
+                label: 'Dataset1',
+                backgroundColor: 'rgba(255, 200, 50, 1)',
+                pointBackgroundColor: 'rgba(255, 200, 50, 1)',
+                pointRadius: 4,
+                data: [
+                    {x: 7, y: 10},
+                    {x: 11, y: 25},
+                    {x: 17, y: 15},
+                    {x: 12, y: 17},
+                    {x: 8, y: 5},
+                    {x: 21, y: 25},
+                    {x: 28, y: 21},
+                    {x: 15, y: 15}
+                ]
+            }, {
+                label: 'Dataset2',
+                backgroundColor: 'rgba(211,26,26,0.79)',
+                pointBackgroundColor: 'rgba(211,26,26,0.79)',
+                pointRadius: 4,
+                data: [
+                    {x: 1, y: 10},
+                    {x: 7, y: 13},
+                    {x: 6, y: 16},
+                    {x: 9, y: 19},
+                    {x: 2, y: 16},
+                    {x: 5, y: 18},
+                    {x: 17, y: 11},
+                    {x: 14, y: 10}
+                ]
+            }, {
+                label: 'Dataset3',
+                backgroundColor: 'rgba(40,229,172,0.78)',
+                pointBackgroundColor: 'rgba(40,229,172,0.78)',
+                pointRadius: 4,
+                data: [
+                    {x: 8, y: 10},
+                    {x: 9, y: 13},
+                    {x: 21, y: 16},
+                    {x: 24, y: 19},
+                    {x: 18, y: 16},
+                    {x: 28, y: 18},
+                    {x: 12, y: 11},
+                    {x: 22, y: 10},
+                    {x: 7, y: 11},
+                    {x: 17, y: 11}
+                ]
+            }, {
+                label: 'Dataset4',
+                backgroundColor: 'rgba(70,173,31,0.89)',
+                pointBackgroundColor: 'rgba(70,173,31,0.89)',
+                pointRadius: 4,
+                data: [
+                    {x: 8, y: 10},
+                    {x: 8, y: 13},
+                    {x: 1, y: 16},
+                    {x: 2, y: 19},
+                    {x: 15, y: 16},
+                    {x: 24, y: 18},
+                    {x: 16, y: 11},
+                    {x: 25, y: 10},
+                    {x: 21, y: 11},
+                    {x: 19, y: 11}
+                ]
+            }
+            ]
+        },
+        options: {
+            scales: {
+                xAxis: {
+                    beginAtZero: true
+                },
+                yAxis: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                title: {
+                    display:true,
+                    text: 'Sales'
+                }
+            }
+
+        }
+    });
+
+
 </script>
 <canvas id='mychart2'></canvas>
 <script>
